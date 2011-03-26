@@ -1,6 +1,9 @@
 % -*-mode: prolog-*-
-% term_to_tex.pl 0.1.3 (10 April 2007)
+% term_to_tex.pl 0.1.4 (26 March 2011)
 % Robert Rothenberg <rr@cs.st-andrews.ac.uk>
+%
+% Copyright (c) 2007, 2008, 2011, Robert Rothenberg.
+% All Rights Reserved.
 %
 % Prolog code to translate a term representing logical formulae,
 % sequents and hypersequents into LaTeX code.

@@ -1,6 +1,9 @@
 % -*-mode: prolog-*-
-% proofsty.pl 0.0.2 (14 December 2007)
+% proofsty.pl 0.1.0 (26 March 2011)
 % Robert Rothenberg <rr@cs.st-andrews.ac.uk>
+%
+% Copyright (c) 2007, 2008, 2011, Robert Rothenberg.
+% All Rights Reserved.
 %
 % Markup proofs in LaTeX for proofsty.sty package.
 %

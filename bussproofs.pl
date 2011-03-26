@@ -1,6 +1,9 @@
 % -*-mode: prolog-*-
-% bussproofs.pl 0.1.1 (10 April 2007)
+% bussproofs.pl 0.1.2 (26 March 2011)
 % Robert Rothenberg <rr@cs.st-andrews.ac.uk>
+%
+% Copyright (c) 2007, 2008, 2011, Robert Rothenberg.
+% All Rights Reserved.
 %
 % Markup proofs in LaTeX for bussproofs.sty package.
 %

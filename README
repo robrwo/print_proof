@@ -1,0 +1,49 @@
+
+% Example usage is below, based on code used in
+% http://www.cs.st-andrews.ac.uk/~rr/darcs/gl/gl.pl
+
+:- use_module(term_to_tex).
+
+% Define Markup for axioms and rules
+
+:- def_func_to_tex( ax_id,      0, 'ID' ).
+:- def_func_to_tex( ax_bot,     0, '\\bot' ).
+:- def_func_to_tex( ax_lambda,  0, '\\Lambda' ).
+:- def_func_to_tex( r_imp,      0, 'R\\supset' ).
+:- def_func_to_tex( l_imp,      0, 'L\\supset' ).
+:- def_func_to_tex( l_imp_star, 0, 'L\\supset^{*}' ).
+:- def_func_to_tex( mix,        0, 'M' ).
+:- def_func_to_tex( split,      0, 'S' ).
+:- def_func_to_tex( ec,         0, 'EC' ).
+:- def_func_to_tex( lw,         0, 'LW' ).
+:- def_func_to_tex( ew,         0, 'EW' ).
+
+% Use markup for proof.sty
+
+:- use_module(proof).
+:- use_module(plain).
+
+print_proof( Proof ) :-
+  print_proof_tree( Proof, plain:print_rule ).
+
+print_proof_tex( Proof ) :-
+  print_proof_tree( Proof, proof:print_rule ).
+
+% print_proof_tree/2 prints the proof tree using with the desired markup
+
+print_proof_tree( Proof, Markup ) :-  
+  call( proof_tree_callback, Proof, Rule, Root, Premisses ),  % get root
+  call( Markup, proof_tree_callback, Rule, Root, Premisses ). % begin markup
+
+% proof_tree_callback/4 is used by the Markup to pull relevant
+% information from the proof tree.  This allows our proof search code
+% to separate the model (proof tree) from the view (markup).
+
+% Given a Node, succeeds with the last Rule to derive the Root term,
+% and a list of Premisses.
+
+proof_tree_callback( Node, Rule, Root, Premisses ) :-
+  functor( Node, Rule, _ ),
+  arg_list( Node, [ Root, _ | Premisses ] ).
+
+

@@ -1,6 +1,9 @@
 % -*-mode: prolog-*-
-% plain.pl 0.1.1 (10 April 2007)
-% Robert Rothenberg <rr@cs.st-andrews.ac.uk>
+% plain.pl 0.1.2 (26 March 2011)
+% Robert Rothenberg <robrwo@gmail.com>
+%
+% Copyright (c) 2007, 2008, 2011, Robert Rothenberg.
+% All Rights Reserved.
 %
 % Display proofs in plain text (as raw Prolog terms).
 %
